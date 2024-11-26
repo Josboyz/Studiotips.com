@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Boyz Portfolio</title>	
+	<meta charset="UTF-8">
+	<meta name="description" content="Boyz Portfolio">
+	<meta name="keywords" content="personal, portfolio">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../cubeportfolio/css/cubeportfolio.min.css"/>
+    <link rel="stylesheet" href="../css/owl.theme.css"/> 
+    <link rel="stylesheet" href="../css/owl.carousel.css"/> 
+    <link rel="stylesheet" href="../css/colors/red.css"/>
+    <link rel="stylesheet" href="../css/magnific-popup.css"/> 
+	<link rel="stylesheet" href="../css/style.css"/>
+    
+    <!-- Google Web fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800" rel="stylesheet">
+    
+    <!-- Font icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+    
+    <!-- HEADER -->
+    <header>
+        <img src="../images/logo.png" alt="">
+        <div class="nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- FULL MENU -->
+    <div class="full-menu">
+        <div class="full-inner row">
+            <nav class="col-md-8">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="col-md-4 full-contact">
+                <ul>
+                    <li class="title">Get in Touch</li>
+                    <li>kenjosboy@gmail.com</li>
+                    <li>
+                        <div class="social">
+                            <a href="https://www.facebook.com/profile.php?id=61563917651568" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://x.com/Boyzking20" target="_blank"><i class="fa-brands fa-x"></i></a> <!-- Changed to 'X' icon -->
+                            <a href="https://www.instagram.com/boyzking2.0/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SITE CONTENT -->
+    <div class="wrapper">
+        <!-- portfolio hero -->
+        <div class="portfolio-hero" style="background: url(../images/work-3.jpg);">            
+            <div class="hero-inner">
+                <div class="cont">
+                    <div class="col-md-8 offset-md-2">
+                        <h1 class="title">KWEDI</h1>
+                        <p>One evening ATEM receives a strange guest, it's death. ATEM gets the idea with the help of his wife to runaway. </p>
+                        <ul class="information">
+                            <li>CLIENT: Danielle BIYO'O - Director</li>
+                            <li>DATE: 04 December 2023</li>
+                            <li>Cinematography - Editing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cont">
+            <section class="portfolio-single type-2 top_90">
+                <h2 class="title">Kwedi</h2>
+                <h3 class="subtitle bottom_30">A short film</h3>
+                <p>One evening ATEM receives a strange guest, it's death. ATEM gets the idea with the help of his wife to runaway. </p>
+                <!-- Video Wrapper -->
+                <div class="video-wrapper" style="position: relative; width: 100%; max-width: 800px; margin: auto; overflow: hidden; padding-top: 56.25%; /* 16:9 Aspect Ratio */">
+                    <!-- Thumbnail Image with Dark Overlay -->
+                    <div class="thumbnail-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+                    <img id="video-thumbnail" src="../images/portfolio/work-3/01.png" alt="Video Thumbnail" style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height:fit-content ;
+                    ">
+                
+                    <!-- Play Button with Animation -->
+                    <button id="play-button" style="
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background-color: rgba(0, 0, 0, 0.7);
+                        color: #fff;
+                        border: none;
+                        padding: 20px;
+                        cursor: pointer;
+                        font-size: 24px;
+                        border-radius: 50%;
+                        z-index: 2;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.3s ease; /* Animation on hover */
+                    " onmouseover="this.style.transform='translate(-50%, -50%) scale(1.1)'" onmouseout="this.style.transform='translate(-50%, -50%) scale(1)'">
+                        ▶
+                    </button>
+                </div>
+                
+                <!-- Content Not Available Message -->
+                <div id="content-not-available" style="display: none; text-align: center; font-size: 20px; color: #f00; margin-top: 20px;">
+                    Content not yet available.
+                </div>
+            <!-- Video Element (Hidden Initially) -->
+            <video id="video" style="display: none; width: 100%; height: 100%; object-fit: cover;">
+                <source src="path_to_your_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <script>
+                // Get elements
+                const playButton = document.getElementById('play-button');
+                const video = document.getElementById('video');
+                const progressBar = document.getElementById('progress-bar');
+                const currentTime = document.getElementById('current-time');
+                const totalTime = document.getElementById('total-time');
+                const muteButton = document.getElementById('mute-button');
+                const videoThumbnail = document.getElementById('video-thumbnail');
+                const contentNotAvailable = document.getElementById('content-not-available');
+                
+                // Play/Pause video
+                playButton.addEventListener('click', () => {
+                    contentNotAvailable.style.display = 'block'; // Show the message
+                    video.style.display = 'none'; // Keep the video hidden
+                    playButton.style.display = 'none'; // Hide the play button
+                });
+            </script>
+             <div class="col-md-12 portfolio-nav text-center top_90">
+                <a class="port-next" href="#">
+                    <div class="nav-title">More</div>
+                    <div class="next-title">Coming soon</div>
+                </a>
+            </div>
+        </div>     
+    </div>
+
+        <footer>
+        <div class="cont">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12 copyright">
+                    <img src="images/logo.png" alt="">
+                    <p>© 2024 Studio tips</p>
+                </div>
+                <div class="col-md-4 d-sm-none d-md-block">
+                    <div class="social">
+                        <a href="https://www.facebook.com/profile.php?id=61563917651568" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://x.com/Boyzking20" target="_blank"><i class="fab fa-x"></i></a> <!-- Changed to 'X' icon -->
+                            <a href="https://www.instagram.com/boyzking2.0/" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12 d-none d-sm-block getintouch">
+                    <a href="#">
+                        <strong>Get In Touch</strong><br>
+                        <p>kenjosboy@gmail.com</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Javascripts -->
+    <script src="../js/jquery-2.1.4.min.js"></script>    
+    <script src="../cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+    <script src="../js/typed.js"></script>
+    <script src="../js/jquery.hover3d.js"></script>
+    <script src="../twitter-api/tweetie.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
+</html>
