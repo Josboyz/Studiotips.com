@@ -300,7 +300,7 @@ header{
   height: 90vh;
   top: 0;
   left: 0;
-  z-index: 6;
+  z-index: -1;
 }
 
 .home .home-content {
@@ -376,6 +376,15 @@ header{
     height: 1px;
     margin: 20px 17px;
 }
+
+.typed-container .element {
+    font-weight: bold;
+  }  
+
+  .typed-container {
+    text-align: center;
+}
+
 
 
 
