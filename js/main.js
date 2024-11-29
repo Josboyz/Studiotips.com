@@ -25,6 +25,23 @@ $(document).ready( function() {
         $(window).resize(fullhome);
     }
         
+    $(function() { //  Shorthand for $(document).ready() - ensures the DOM is ready
+        $(".element").typed({
+          strings: [
+            "Audiovisual content.",
+            "Editing course.",
+            "Photography.",
+            "Logo creation..."
+          ],
+          loop: true,
+          backDelay: 1500,
+          typeSpeed: 30
+          // ... other Typed.js options
+        });
+      
+        // Other JavaScript code...
+      });
+      
 
     // MAGNIFIC POPUP FOR PORTFOLIO PAGE
     // $('.magnif').magnificPopup({
